@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,700;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #a6a6a6;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #d80000; /* Vermelho escuro */
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h3 {
+    font-weight: bold;
+    color: #ffffff; /* Cor branca para o texto do título */
+    margin: 0; /* Removendo margem padrão do h3 */
+}
+
+#page {
+    width: 800px;
+    margin: 50px auto;
+}
+
+main {
+    background-color: #d9d9d9;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Addp {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #d80000;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ad0000; /* Vermelho mais escuro ao passar o mouse */
+}
+
+#DadosProfessores {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Fundo cinza escuro */
+}
+
+.id {
+    font-weight: bold;
+    color: #000000;
+}
