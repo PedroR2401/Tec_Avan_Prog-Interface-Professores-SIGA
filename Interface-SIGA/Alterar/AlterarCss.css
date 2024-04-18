@@ -6,7 +6,8 @@ body {
 }
 
 #form {
-    width: 300px;
+    width: 80%; 
+    max-width: 400px; 
     margin: 50px auto;
     padding: 20px;
     background-color: #ffffff;
@@ -23,13 +24,14 @@ h3 {
 input[type="text"],
 input[type="date"],
 input[type="submit"] {
-    width: calc(100% - 20px);
+    width: calc(100% - 20px); 
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #a6a6a6;
     border-radius: 15px;
     font-size: 16px;
     font-weight: bold;
+    box-sizing: border-box; 
 }
 
 input[type="submit"] {

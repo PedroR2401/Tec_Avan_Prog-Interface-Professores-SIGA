@@ -10,7 +10,7 @@ body {
 }
 
 nav {
-    background-color: #d80000; /* Vermelho escuro */
+    background-color: #d80000;
     padding: 20px;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -18,12 +18,13 @@ nav {
 
 h3 {
     font-weight: bold;
-    color: #ffffff; /* Cor branca para o texto do título */
-    margin: 0; /* Removendo margem padrão do h3 */
+    color: #ffffff;
+    margin: 0;
 }
 
 #page {
-    width: 800px;
+    width: 90%; 
+    max-width: 800px; 
     margin: 50px auto;
 }
 
@@ -53,7 +54,7 @@ button {
 }
 
 button:hover {
-    background-color: #ad0000; /* Vermelho mais escuro ao passar o mouse */
+    background-color: #ad0000;
 }
 
 #DadosProfessores {
@@ -61,7 +62,7 @@ button:hover {
     padding: 10px;
     border-radius: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff; /* Fundo cinza escuro */
+    background-color: #ffffff;
 }
 
 .id {
