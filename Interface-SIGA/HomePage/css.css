@@ -40,7 +40,7 @@ main {
     text-align: center;
 }
 
-.btn_add{
+.btn_add, .btn_alterar, .btn_excluir, .btn_exibir{
     color: #ffffff;
     text-decoration: none;
 }
@@ -72,5 +72,8 @@ button:hover {
 
 .id {
     font-weight: bold;
+    color: #000000;
+}
+p {
     color: #000000;
 }
