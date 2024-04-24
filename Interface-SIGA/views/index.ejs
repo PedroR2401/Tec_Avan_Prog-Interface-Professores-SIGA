@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title>HomePage</title>
+</head>
+<body>
+    <nav>
+        <h3>HomePage</h3>
+    </nav>
+
+    <div id="page">
+        <main>
+            <div class="Addp">
+                <a href="Add"><button>Adicionar Professor</button></a>
+            </div>
+            
+            <% professores.forEach(function(professor) { %>
+            <div class="DadosProfessores">
+                <p class="id"><%= professor.matricula %></p>
+                <p><%= professor.nome %></p>
+                <a href="/professor/<%= professor._id %>"><button>Exibir</button></a>
+                <a href="/editar/<%= professor._id %>"><button>Alterar</button></a>
+                <form action="/excluir/<%= professor._id %>" method="post" style="display: inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </div>
+            <% }); %>
+        </main>
+    </div>
+</body>
+</html>
