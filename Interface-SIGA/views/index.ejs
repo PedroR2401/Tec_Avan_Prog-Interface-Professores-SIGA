@@ -21,9 +21,9 @@
             <div class="DadosProfessores">
                 <p class="id"><%= professor.matricula %></p>
                 <p><%= professor.nome %></p>
-                <a href="/professor/<%= professor._id %>"><button>Exibir</button></a>
-                <a href="/editar/<%= professor._id %>"><button>Alterar</button></a>
-                <form action="/excluir/<%= professor._id %>" method="post" style="display: inline;">
+                <a href="/professor/<%= professor.matricula %>"><button>Exibir</button></a>
+                <a href="/editar/<%= professor.matricula %>"><button>Alterar</button></a>
+                <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;">
                     <button type="submit">Excluir</button>
                 </form>
             </div>

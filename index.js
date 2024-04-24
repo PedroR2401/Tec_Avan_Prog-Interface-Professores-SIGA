@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // Pasta para arquivos estáticos como CSS
 
 // Endpoint configurável
-const API_ENDPOINT = "/API-PROFESORES";
+const API_ENDPOINT = "https://6b8e7676-8581-4b94-867e-7b0aa6be4019.mock.pstmn.io";
 
 // Rota para exibir todos os professores
 app.get("/", async (req, res) => {
