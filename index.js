@@ -75,7 +75,7 @@ app.get("/professor/:id", async (req, res) => {
 });
 
 // Rota para editar um professor
-app.get("/editar/:id", async (req, res) => {
+app.get("/Alterar/:id", async (req, res) => {
   const id = req.params.id;
 
   try {
@@ -90,7 +90,7 @@ app.get("/editar/:id", async (req, res) => {
 });
 
 // Rota para processar a edição de um professor
-app.post("/editar/:id", async (req, res) => {
+app.post("/Alterar/:id", async (req, res) => {
   const id = req.params.id;
 
   try {
