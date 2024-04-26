@@ -15,25 +15,25 @@
             <div class="professor">
                 <h4>Nome do professor:</h4>
                 <p><%= professor.nome %></p>
-            </div>    
+            </div>
 
-            <div class="matricula">    
+            <div class="matricula">
                 <h4>Matrícula:</h4> 
                 <p><%= professor.matricula %></p>
-            </div> 
-        
+            </div>
+
             <div class="data">
                 <h4>Data de Nascimento:</h4> 
-                <p><%= professor.dataNascimento %></p> <!-- Supondo que a data de nascimento esteja disponível -->
+                <p><%= professor.data_de_nascimento %></p> <!-- Corrigido para o nome do campo correto -->
             </div>
 
             <!-- Botão para excluir -->
             <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;">
-                <input type="submit" name="bntExcluir" value="Excluir"> 
+                <button type="submit">Excluir</button>
             </form>
 
             <!-- Botão para editar -->
-            <a href="//<%= professor.matricula %>"><input type="button" name="bntEditar" value="Editar"></a>
+            <a href="/editar/<%= professor.matricula %>"><button>Alterar</button></a>
         </div>
     </div>
 </body>

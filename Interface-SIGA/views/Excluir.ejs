@@ -3,30 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>excluir professor</title>
+    <title>Excluir Professor</title>
     <link rel="stylesheet" href="./css/ExcluirCss.css">
 </head>
-
-<h3>Excluir Professor</h3>
 <body>
-    
-<!--  essa tela so tem as marcações de onde fica os elementos, 
-    pq é uma tela q precisa dos dados adicionado nos fomrularios, 
-    porem o formulario ainda n funciona ent nao da p fazer 100% mas 
-    ficaria meio assim quando pronto-->
+    <h3>Excluir Professor</h3>
 
     <div id="excluir">
         <h4>Nome do professor:</h4>
-        <p>aqui vai a variavel com o nome dele </p>  </br>
+        <p><%= professor.nome %></p>  </br>
 
-        <h4 id="matricula">Matrícula:</h4> 
-        <p>aqui vai no n° da matricula do rapaz </p> <br>
+        <h4>Matrícula:</h4> 
+        <p><%= professor.matricula %></p> <br>
 
         <h4>Data de Nascimento:</h4> 
-        <p id="TxtData">aqui vai a data </p> <br><br>
+        <p><%= professor.dataNascimento %></p> <br><br>
 
-        <input type="submit" name="bntExcluir" value="Clique aqui para excluir os dados!">
+        <!-- Corrigido o action do formulário para "/excluir/<%= professor.matricula %>" -->
+        <form action="/excluir/<%= professor.matricula %>" method="post">
+            <input type="submit" name="bntExcluir" value="Clique aqui para excluir os dados!">
+        </form>
     </div>
 
 </body>
-</html
+</html>

@@ -6,7 +6,6 @@ dotenv.config();
 
 const API_ENDPOINT = process.env.API_ENDPOINT;
 
-
 const app = express();
 
 const port = 3001;
@@ -18,7 +17,6 @@ app.use(express.static(path.join(__dirname, 'Interface-SIGA', 'views')));
 app.set('views', path.join(__dirname, 'Interface-SIGA', 'views'));
 
 app.set('view engine', 'ejs');
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // Pasta para arquivos estáticos como CSS
@@ -51,7 +49,7 @@ app.post("/Add", async (req, res) => {
 
     await axios.post(API_ENDPOINT + "/professores", { matricula, nome });
 
-    res.redirect("/");
+    res.redirect("Add");
   } catch (error) {
     console.error("Erro ao cadastrar professor:", error.message);
     res.render("error", { message: "Erro ao cadastrar professor" });
@@ -59,11 +57,11 @@ app.post("/Add", async (req, res) => {
 });
 
 // Rota para exibir detalhes de um professor
-app.get("/professor/:id", async (req, res) => {
-  const id = req.params.id;
+app.get("/professor/:matricula", async (req, res) => {
+  const matricula = req.params.matricula;
 
   try {
-    const response = await axios.get(API_ENDPOINT + "/professores/" + id);
+    const response = await axios.get(API_ENDPOINT + "/professores/" + matricula);
     const professor = response.data;
 
     res.render("detalhes", { professor });
@@ -74,11 +72,11 @@ app.get("/professor/:id", async (req, res) => {
 });
 
 // Rota para editar um professor
-app.get("/Alterar/:id", async (req, res) => {
-  const id = req.params.id;
+app.get("/editar/:matricula", async (req, res) => {
+  const matricula = req.params.matricula;
 
   try {
-    const response = await axios.get(API_ENDPOINT + "/professores/" + id);
+    const response = await axios.get(API_ENDPOINT + "/professores/" + matricula);
     const professor = response.data;
 
     res.render("editar", { professor });
@@ -89,14 +87,14 @@ app.get("/Alterar/:id", async (req, res) => {
 });
 
 // Rota para processar a edição de um professor
-app.post("/Alterar/:id", async (req, res) => {
-  const id = req.params.id;
+app.post("/editar/:matricula", async (req, res) => {
+  const matricula = req.params.matricula;
 
   try {
-    const { matricula, nome } = req.body;
+    const { matricula: newMatricula, nome } = req.body;
     // Valide os dados antes de enviar para a API
 
-    await axios.put(API_ENDPOINT + "/professores/" + id, { matricula, nome });
+    await axios.put(API_ENDPOINT + "/professores/" + matricula, { matricula: newMatricula, nome });
 
     res.redirect("/");
   } catch (error) {
@@ -106,11 +104,11 @@ app.post("/Alterar/:id", async (req, res) => {
 });
 
 // Rota para excluir um professor
-app.post("/excluir/:id", async (req, res) => {
-  const id = req.params.id;
+app.post("/excluir/:matricula", async (req, res) => {
+  const matricula = req.params.matricula;
 
   try {
-    await axios.delete(API_ENDPOINT + "/professores/" + id);
+    await axios.delete(API_ENDPOINT + "/professores/" + matricula);
 
     res.redirect("/");
   } catch (error) {

@@ -6,30 +6,22 @@
     <title>Adicionar Professor</title>
     <link rel="stylesheet" href="/css/AddCss.css">
 </head>
-
 <body>
     <!-- formulário onde são inseridos os dados do professor a ser cadastrado -->
-
     <h3>Adicionar Professor</h3>
-    
     <div id="form">
-        <form action="/" method="post"> <!-- Os dados devem ser enviados para a rota de cadastro no servidor -->
-
+        <form action="/api/professores" method="post"> <!-- Corrigido o action para enviar dados para a API -->
             <!-- Campo para inserir o nome do professor -->
-            Nome do professor:</br>
-            <input type="text" name="nome"> </br></br></br>
-
+            Nome do professor:<br>
+            <input type="text" name="nome"> <br><br><br>
             <!-- Campo para inserir a matrícula do professor -->
-            Matrícula:</br>
-            <input type="text" name="matricula"> </br></br></br>
-
+            Matrícula:<br>
+            <input type="text" name="matricula"> <br><br><br>
             <!-- Campo para inserir a data de nascimento do professor -->
-            Data de Nascimento: </br>
-            <input type="date" name="data"> </br></br></br>
-
+            Data de Nascimento: <br>
+            <input type="date" name="data_de_nascimento"> <br><br><br> <!-- Corrigido o nome do campo conforme a API -->
             <!-- Botão de envio do formulário -->
             <input type="submit" name="salvar" value="Salvar">
-
         </form>
     </div>
 </body>

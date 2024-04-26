@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/home.css">
     <title>HomePage</title>
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 <body>
     <nav>
         <h3>HomePage</h3>
     </nav>
-
     <div id="page">
         <main>
             <div class="Addp">
-                <a href="Add"><button>Adicionar Professor</button></a>
+                <a href="/Add"><button>Adicionar Professor</button></a> <!-- Corrigido o href -->
             </div>
-            
             <% professores.forEach(function(professor) { %>
             <div class="DadosProfessores">
                 <p class="id"><%= professor.matricula %></p>
                 <p><%= professor.nome %></p>
-                <a href="/professor/<%= professor.matricula %>"><button>Exibir</button></a>
+                <a href="/professor/<%= professor.matricula %>"><button>Exibir</button></a> <!-- Corrigido o href -->
                 <a href="/editar/<%= professor.matricula %>"><button>Alterar</button></a>
-                <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;">
+                <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;"> <!-- Corrigido o action para enviar dados para a API -->
                     <button type="submit">Excluir</button>
                 </form>
             </div>
