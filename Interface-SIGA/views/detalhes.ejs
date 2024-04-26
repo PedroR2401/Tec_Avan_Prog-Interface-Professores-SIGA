@@ -14,17 +14,17 @@
         <div class="ExibirPROF">
             <div class="professor">
                 <h4>Nome do professor:</h4>
-                <p id="nomeProf"><%= professor.nome %></p>
+                <p><%= professor.nome %></p>
             </div>    
 
             <div class="matricula">    
                 <h4>Matrícula:</h4> 
-                <p id="matriculaProf"><%= professor.matricula %></p>
+                <p><%= professor.matricula %></p>
             </div> 
         
             <div class="data">
                 <h4>Data de Nascimento:</h4> 
-                <p id="nascProf"><%= professor.dataNascimento %></p> <!-- Supondo que a data de nascimento esteja disponível -->
+                <p><%= professor.dataNascimento %></p> <!-- Supondo que a data de nascimento esteja disponível -->
             </div>
 
             <!-- Botão para excluir -->
@@ -33,7 +33,7 @@
             </form>
 
             <!-- Botão para editar -->
-            <a href="/editar/<%= professor.matricula %>"><input type="button" name="bntEditar" value="Editar"></a>
+            <a href="//<%= professor.matricula %>"><input type="button" name="bntEditar" value="Editar"></a>
         </div>
     </div>
 </body>

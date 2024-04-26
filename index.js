@@ -1,6 +1,11 @@
 const express = require("express");
 const axios = require("axios"); // Importe o Axios para fazer requisições HTTP
 const bodyParser = require("body-parser");
+const dotenv = require('dotenv');
+dotenv.config();
+
+const API_ENDPOINT = process.env.API_ENDPOINT;
+
 
 const app = express();
 
@@ -12,20 +17,14 @@ app.use(express.static(path.join(__dirname, 'Interface-SIGA', 'views')));
 
 app.set('views', path.join(__dirname, 'Interface-SIGA', 'views'));
 
-
 app.set('view engine', 'ejs');
-
-
-// Define o mecanismo de visualização como EJS
-
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public")); // Pasta para arquivos estáticos como CSS
 
 // Endpoint configurável
-const API_ENDPOINT = "https://6b8e7676-8581-4b94-867e-7b0aa6be4019.mock.pstmn.io";
-
+console.log(API_ENDPOINT);
 // Rota para exibir todos os professores
 app.get("/", async (req, res) => {
   try {
