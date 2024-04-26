@@ -28,12 +28,12 @@
             </div>
 
             <!-- Botão para excluir -->
-            <form action="/excluir/<%= professor._id %>" method="post" style="display: inline;">
+            <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;">
                 <input type="submit" name="bntExcluir" value="Excluir"> 
             </form>
 
             <!-- Botão para editar -->
-            <a href="/editar/<%= professor._id %>"><input type="button" name="bntEditar" value="Editar"></a>
+            <a href="/editar/<%= professor.matricula %>"><input type="button" name="bntEditar" value="Editar"></a>
         </div>
     </div>
 </body>
