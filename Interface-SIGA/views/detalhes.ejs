@@ -28,11 +28,9 @@
             </div>
 
             <!-- Botão para excluir -->
-            <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;">
+            <form action="/excluir/<%= professor.matricula %>" method="post"  onsubmit="return confirm('Tem certeza que deseja excluir este professor?');" style="display: inline; "> <!-- Corrigido o action para enviar dados para a API -->
                 <button type="submit">Excluir</button>
             </form>
-
-            <!-- Botão para editar -->
             <a href="/editar/<%= professor.matricula %>"><button>Alterar</button></a>
         </div>
     </div>

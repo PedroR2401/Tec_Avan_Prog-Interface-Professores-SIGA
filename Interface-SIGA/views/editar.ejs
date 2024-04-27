@@ -10,7 +10,12 @@
     <h3>Alterar Professor</h3>
 
     <div id="form1">
-        <form action="/editar/:<%=professor.matricula%>" method="post"> <!-- Corrigido o caminho do action para "/editar" -->
+        <!-- Corrigido o caminho do action para "/editar" e removida a variável professor.matricula -->
+        <form action="/editar/:<%=professor.matricula%>" method="post">
+
+
+            <!-- Adicione um campo oculto para enviar a matrícula do professor -->
+            <input type="hidden" name="matricula" value="<%= professor.matricula %>">
 
             Nome do professor: <br>
             <input type="text" name="nome"> <br><br><br>

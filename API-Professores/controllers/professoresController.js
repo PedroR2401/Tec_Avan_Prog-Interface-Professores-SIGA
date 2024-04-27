@@ -66,6 +66,7 @@ router.patch('/:matricula', async (req, res) => {
         console.error("Erro ao atualizar professor:", error);
         res.status(500).json("Ocorreu um erro ao atualizar o professor");
     }
+   
 })
 
 // http://localhost:3000/api/professores/004

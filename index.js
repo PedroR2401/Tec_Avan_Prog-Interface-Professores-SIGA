@@ -89,14 +89,24 @@ app.get("/editar/:matricula", async (req, res) => {
 });
 
 // Rota para processar a edição de um professor
+// Rota para processar a edição de um professor
+// Rota para processar a edição de um professor
 app.post("/editar/:matricula", async (req, res) => {
   const matricula = req.params.matricula;
 
   try {
-    const { matricula: newMatricula, nome } = req.body;
-    // Valide os dados antes de enviar para a API
+    console.log("Dados do formulário:", req.body); // Adicionando um log para visualizar os dados recebidos
 
-    await axios.put(API_ENDPOINT + "/professores/" + matricula, { matricula: newMatricula, nome });
+    const { nome, data } = req.body;
+
+    console.log("Matrícula do professor:", matricula);
+    console.log("Novo nome:", nome);
+    console.log("Nova data de nascimento:", data);
+
+    // Valide os dados antes de enviar para a API
+    const response = await axios.patch(API_ENDPOINT + "/professores/" + matricula, { nome, data });
+
+    console.log("Resposta da API:", response.data);
 
     res.redirect("/");
   } catch (error) {
