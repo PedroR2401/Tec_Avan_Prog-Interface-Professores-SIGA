@@ -12,6 +12,8 @@ const port = 3001;
 
 const path = require('path'); // Importe o módulo 'path'
 
+app.use(express.static(path.join(__dirname, 'css')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'Interface-SIGA', 'views')));
 
 app.set('views', path.join(__dirname, 'Interface-SIGA', 'views'));
@@ -49,7 +51,7 @@ app.post("/Add", async (req, res) => {
 
     await axios.post(API_ENDPOINT + "/professores", { matricula, nome, data_de_nascimento });
 
-    res.redirect("Add");
+    res.redirect("/");
   } catch (error) {
     console.error("Erro ao cadastrar professor:", error.message);
     res.render("error", { message: "Erro ao cadastrar professor" });
@@ -116,7 +118,6 @@ app.post("/excluir/:matricula", async (req, res) => {
     res.render("error", { message: "Erro ao excluir professor" });
   }
 });
-
 app.listen(port, () => {
   console.log("Iniciei na porta " + port);
 });

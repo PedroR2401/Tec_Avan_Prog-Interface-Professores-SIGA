@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Professor</title>
-    <link rel="stylesheet" href="/css/AddCss.css">
+    <link rel="stylesheet" href="../css/AddCss.css">
 </head>
 <body>
     <!-- formulário onde são inseridos os dados do professor a ser cadastrado -->
     <h3>Adicionar Professor</h3>
     <div id="form">
-        <form action="/Add" method="post"> <!-- Corrigido o action para enviar dados para a API -->
+        <form action="/Add" method="post" onsubmit="return confirm('Professor cadastrado com sucesso');"> <!-- Corrigido o action para enviar dados para a API -->
             <!-- Campo para inserir o nome do professor -->
             Nome do professor:<br>
             <input type="text" name="nome"> <br><br><br>

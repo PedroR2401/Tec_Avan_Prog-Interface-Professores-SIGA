@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HomePage</title>
-    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
     <nav>
@@ -21,7 +21,7 @@
                 <p><%= professor.nome %></p>
                 <a href="/professor/<%= professor.matricula %>"><button>Exibir</button></a> <!-- Corrigido o href -->
                 <a href="/editar/<%= professor.matricula %>"><button>Alterar</button></a>
-                <form action="/excluir/<%= professor.matricula %>" method="post" style="display: inline;"> <!-- Corrigido o action para enviar dados para a API -->
+                <form action="/excluir/<%= professor.matricula %>" method="post"  onsubmit="return confirm('Tem certeza que deseja excluir este professor?');" style="display: inline; "> <!-- Corrigido o action para enviar dados para a API -->
                     <button type="submit">Excluir</button>
                 </form>
             </div>
