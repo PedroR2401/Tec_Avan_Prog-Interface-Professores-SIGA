@@ -44,10 +44,10 @@ app.get("/Add", (req, res) => {
 // Rota para processar o cadastro de professor
 app.post("/Add", async (req, res) => {
   try {
-    const { matricula, nome } = req.body;
+    const { matricula, nome, data_de_nascimento } = req.body;
     // Valide os dados antes de enviar para a API
 
-    await axios.post(API_ENDPOINT + "/professores", { matricula, nome });
+    await axios.post(API_ENDPOINT + "/professores", { matricula, nome, data_de_nascimento });
 
     res.redirect("Add");
   } catch (error) {
