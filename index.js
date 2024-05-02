@@ -64,9 +64,9 @@ app.get("/professor/:matricula", async (req, res) => {
 
   try {
     const response = await axios.get(API_ENDPOINT + "/professores/" + matricula);
-    const professor = response.data;
+    const professor = response.data[0];
 
-    res.render("detalhes", { professor });
+    res.render("detalhes", { professor : professor });
   } catch (error) {
     console.error("Erro ao buscar detalhes do professor:", error.message);
     res.render("error", { message: "Erro ao buscar detalhes do professor" });
@@ -79,17 +79,15 @@ app.get("/editar/:matricula", async (req, res) => {
 
   try {
     const response = await axios.get(API_ENDPOINT + "/professores/" + matricula);
-    const professor = response.data;
+    const professor = response.data[0];
 
-    res.render("editar", { professor });
+    res.render("editar", { professor : professor });
   } catch (error) {
     console.error("Erro ao buscar detalhes do professor:", error.message);
     res.render("error", { message: "Erro ao buscar detalhes do professor" });
   }
 });
 
-// Rota para processar a edição de um professor
-// Rota para processar a edição de um professor
 // Rota para processar a edição de um professor
 app.post("/editar/:matricula", async (req, res) => {
   const matricula = req.params.matricula;
